@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Vivek Yadav | Horticultural Genomics & Multi-Omics</title>
+  <meta name="description" content="Research portfolio of Dr. Vivek Yadav — Grapevine genomics, multi-omics, domestication history, and biotic stress resilience.">
+
+  <style>
+    :root {
+      --hero-bg: #1c3826;
+      --hero-text: #ffffff;
+      --accent: #489b64;
+      --accent-soft: #eaf3ed;
+      --bg: #f8faf7;
+      --card-bg: #ffffff;
+      --text: #1f2421;
+      --muted: #58635c;
+      --border: #e0e5de;
+      --radius: 12px;
+      --wrap: 980px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: #1e6b37; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #13271c 0%, #1c3826 65%, #2a523c 100%);
+      color: var(--hero-text);
+      padding: 55px 0 45px 0;
+      overflow: hidden;
+    }
+
+    .hero .bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .hero-text { flex: 1; }
+    .eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9fe2b6;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 1.02rem;
+      color: #e3ece6;
+      margin-bottom: 4px;
+    }
+
+    /* Badges */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .badges a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      backdrop-filter: blur(4px);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .badges a:hover {
+      background: #ffffff;
+      color: #13271c;
+      border-color: #ffffff;
+    }
+
+    .hero-art {
+      width: 170px;
+      height: 170px;
+      flex-shrink: 0;
+    }
+
+    /* Metrics Bar */
+    .metrics-bar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+      margin-bottom: 38px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      gap: 12px;
+    }
+
+    .metric-item b {
+      display: block;
+      font-size: 1.55rem;
+      color: #1b4d2b;
+      font-weight: 700;
+    }
+
+    .metric-item span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Sections */
+    main { padding: 0 0 60px 0; }
+    section { margin-bottom: 48px; }
+
+    h2 {
+      font-size: 1.55rem;
+      color: #14301d;
+      margin-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin-bottom: 22px;
+    }
+
+    /* Research Pillars Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+    }
+
+    .card svg {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.08rem;
+      color: #14301d;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Publications */
+    .pubs {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .pubs li {
+      display: flex;
+      gap: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      align-items: baseline;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .pubs .yr {
+      font-weight: 700;
+      color: #1b4d2b;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      width: 46px;
+    }
+
+    .pubs .role {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background-color: var(--accent-soft);
+      color: #1b4d2b;
+      border: 1px solid #c2dbcb;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-right: 6px;
+      vertical-align: middle;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    details {
+      margin-top: 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+
+    summary {
+      font-weight: 600;
+      color: #1b4d2b;
+      cursor: pointer;
+    }
+
+    details[open] summary { margin-bottom: 14px; }
+
+    /* Editorial & Awards List */
+    .info-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .info-list li {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.92rem;
+    }
+
+    .info-list li b {
+      color: #1b4d2b;
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+
+    /* Facts */
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .fact {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 0.92rem;
+    }
+
+    .fact b {
+      display: block;
+      color: #1b4d2b;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    @media (max-width: 680px) {
+      .hero-content { flex-direction: column-reverse; text-align: left; }
+      .hero-art { width: 120px; height: 120px; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .pubs li { flex-direction: column; gap: 4px; }
+      .pubs .yr { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<header class="hero">
+  <svg class="bg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#fff" stroke-opacity=".15" stroke-width="1.4">
+      <path d="M-20 330 C120 250 220 340 360 270 S620 200 840 260"/>
+      <path d="M-20 360 C140 290 260 380 400 310 S640 250 840 300"/>
+      <path d="M-20 300 C100 220 240 300 380 230 S600 160 840 220"/>
+    </g>
+    <g fill="#fff" fill-opacity=".12">
+      <circle cx="80" cy="80" r="5"/><circle cx="650" cy="60" r="6"/>
+      <circle cx="530" cy="330" r="4"/><circle cx="340" cy="40" r="3"/>
+    </g>
+  </svg>
+
+  <div class="wrap hero-content">
+    <div class="hero-text">
+      <p class="eyebrow">Horticultural Genomics & Multi-Omics</p>
+      <h1>Dr. Vivek Yadav</h1>
+      <p>Associate Researcher &amp; Postdoctoral Fellow</p>
+      <p>Institute of Fruit and Vegetable Crops, Xinjiang Academy of Agricultural Sciences, Urumqi, China</p>
+
+      <div class="badges">
+        <a href="https://orcid.org/0000-0001-8259-6706" target="_blank" rel="noopener noreferrer">ORCID</a>
+        <a href="https://scholar.google.com/citations?user=y1F7RiUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="https://webofscience.clarivate.cn/wos/author/record/GPX-7609-2022" target="_blank" rel="noopener noreferrer">Web of Science</a>
+        <a href="https://www.linkedin.com/in/vivek-yadav-841b8a37a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/VimaxXAAS" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:vivekyadav@nwafu.edu.cn">Email (Office)</a>
+      </div>
+    </div>
+
+    <!-- Grape & Vine Motif -->
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 240 240">
+        <circle cx="120" cy="120" r="108" fill="#fff" fill-opacity=".08"/>
+        <circle cx="120" cy="120" r="86" fill="none" stroke="#fff" stroke-opacity=".25" stroke-dasharray="4 6"/>
+        <circle cx="120" cy="95" r="18" fill="#7d4b99"/>
+        <circle cx="102" cy="125" r="18" fill="#5c2e78"/>
+        <circle cx="138" cy="125" r="18" fill="#6d398d"/>
+        <circle cx="120" cy="155" r="18" fill="#4d1f67"/>
+        <circle cx="85" cy="148" r="15" fill="#7d4b99"/>
+        <circle cx="155" cy="148" r="15" fill="#5c2e78"/>
+        <path d="M120 77 C120 58 135 50 145 46" stroke="#8fd19e" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M120 70 C105 60 90 68 86 78 C100 80 115 75 120 70 Z" fill="#60b674"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- Academic Metrics Bar -->
+<div class="metrics-bar">
+  <div class="wrap metrics-grid">
+    <div class="metric-item">
+      <b>2,842</b>
+      <span>Citations</span>
+    </div>
+    <div class="metric-item">
+      <b>22</b>
+      <span>h-index</span>
+    </div>
+    <div class="metric-item">
+      <b>27</b>
+      <span>i10-index</span>
+    </div>
+    <div class="metric-item">
+      <b>30+</b>
+      <span>Peer-Reviewed Papers</span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <!-- Research Focus -->
+  <section id="research">
+    <h2>Research Focus</h2>
+    <p class="lead">Deciphering grape domestication history, stress resilience mechanisms, and fruit quality using multi-omics pipelines.</p>
+    <div class="grid">
+      <div class="card">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" fill="#ede7f6"/>
+          <circle cx="20" cy="20" r="6" fill="#673ab7"/>
+          <circle cx="28" cy="20" r="6" fill="#7e57c2"/>
+          <circle cx="24" cy="28" r="6" fill="#512da8"/>
+        </svg>
+        <h3>Grape Genomics &amp; Domestication</h3>
+        <p>Haplotype-resolved genome assembly, resequencing, and exploration of Xinjiang local germplasm evolutionary history.</p>
+      </div>
+
+      <div class="card">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" fill="#e8f5e9"/>
+          <path d="M24 10c-8 6-10 14-4 22 8-2 14-8 10-18-2-3-4-4-6-4z" fill="#43a047"/>
+          <path d="M24 10v22" stroke="#fff" stroke-width="2"/>
+        </svg>
+        <h3>Biotic Stress &amp; Defense</h3>
+        <p>Pathogen interaction pathways, rootstock-mediated gray mold resistance, and molecular responses to powdery mildew.</p>
+      </div>
+
+      <div class="card">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" fill="#e0f2f1"/>
+          <path d="M12 28c6-14 10 14 16 0s10 14 16 0" stroke="#00897b" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <h3>Multi-Omics &amp; Berry Quality</h3>
+        <p>Untargeted metabolomics and transcriptomics investigating berry cracking, sugar profiles, and antioxidant potential.</p>
+      </div>
+
+      <div class="card">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" fill="#fff3e0"/>
+          <path d="M24 8v32M14 16l20 16M14 32l20-16" stroke="#fb8c00" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Candidate Gene Mining</h3>
+        <p>Characterization of Trihelix, Dirigent, Laccase, and BPC transcription factor families for climate-smart breeding.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications">
+    <h2>Selected Publications</h2>
+    <p class="lead">First and corresponding author research in plant physiology, genomics, and horticulture.</p>
+
+    <ul class="pubs">
+      <li>
+        <span class="yr">2026</span>
+        <div>
+          <span class="role">First Author</span>
+          <strong>Yadav V</strong>, Wang H, Zhang F, Gruda NS, Zhang C, Zhang S, Zhou X, Zhong H, Zhang D, Wu X. 
+          Rootstock-enhanced gray mold resistance through phytohormonal crosstalk and transcriptional reprogramming. 
+          <i>Plant Physiology and Biochemistry</i> 236:111430. 
+          <a href="https://doi.org/10.1016/j.plaphy.2026.111430" target="_blank" rel="noopener">doi:10.1016/j.plaphy.2026.111430</a>
+        </div>
+      </li>
+      <li>
+        <span class="yr">2026</span>
+        <div>
+          <span class="role">Corresponding</span>
+          Zhang C, Lyu S, <strong>Yadav V</strong>. 
+          Multi-Variety Metabolomic Profiling Uncovers Conserved and Divergent Metabolites Underlying Antioxidant Potential in Grape Dehydration. 
+          <i>Applied Food Research</i>, 102284.
+        </div>
+      </li>
+      <li>
+        <span class="yr">2026</span>
+        <div>
+          <span class="role">Corresponding</span>
+          Zhang C, Lyu S, <strong>Yadav V</strong>. 
+          Untargeted Metabolomics Reveals Color-Dependent Nutritional Variation in Raisins: Insights into Composition and Antioxidant Capacity. 
+          <i>Antioxidants</i> 15:401.
+        </div>
+      </li>
+      <li>
+        <span class="yr">2025</span>
+        <div>
+          <span class="role">First Author</span>
+          <strong>Yadav V</strong>, Zhang F, Wang H, Zhang C, Zhang S, Zhang J, Xu N, Zhou X, Zhong H, Wu X. 
+          Identification of trihelix transcription factors in grapevine and expression dynamics in response to biotic stress and hormone treatment. 
+          <i>Physiological and Molecular Plant Pathology</i> 137:102628. 
+          <a href="https://doi.org/10.1016/j.pmpp.2025.102628" target="_blank" rel="noopener">doi:10.1016/j.pmpp.2025.102628</a>
+        </div>
+      </li>
+      <li>
+        <span class="yr">2024</span>
+        <div>
+          <span class="role">First Author</span>
+          <strong>Yadav V</strong>, Zhong H, Patel MK, Zhang S, Zhou X, Zhang C, Zhang J, Su J, Zhang F, Wu X. 
+          Integrated omics-based exploration for temperature stress resilience: An approach to smart grape breeding strategies. 
+          <i>Plant Stress</i> 11:100356. 
+          <a href="https://doi.org/10.1016/j.stress.2024.100356" target="_blank" rel="noopener">doi:10.1016/j.stress.2024.100356</a>
+        </div>
+      </li>
+      <li>
+        <span class="yr">2024</span>
+        <div>
+          <span class="role">Corresponding</span>
+          Wang H, Zhong H, Zhang F, Zhang C, Zhang S, Zhou X, Wu X, <strong>Yadav V</strong>. 
+          Identification of Grape Laccase Genes and Their Potential Role in Secondary Metabolite Synthesis. 
+          <i>International Journal of Molecular Sciences</i> 25(19):10574. 
+          <a href="https://doi.org/10.3390/ijms251910574" target="_blank" rel="noopener">doi:10.3390/ijms251910574</a>
+        </div>
+      </li>
+      <li>
+        <span class="yr">2022</span>
+        <div>
+          <span class="role">First Author</span>
+          <strong>Yadav V</strong>, Wang Z, Yanliang G, Zhang X. 
+          Comparative transcriptome profiling reveals the role of phytohormones and phenylpropanoid pathway in early-stage resistance against powdery mildew in watermelon. 
+          <i>Frontiers in Plant Science</i> 13:1016822. 
+          <a href="https://doi.org/10.3389/fpls.2022.1016822" target="_blank" rel="noopener">doi:10.3389/fpls.2022.1016822</a>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Collapsible Collaborative Work -->
+    <details>
+      <summary>Show Collaborative &amp; Co-Authored Publications</summary>
+      <ul class="pubs" style="margin-top: 14px;">
+        <li>
+          <span class="yr">2025</span>
+          <div>
+            Zhong H, Shi X, Zhang F, Yao J, Wang X, <strong>Yadav V</strong>, et al. 
+            Haplotype-resolved assemblies provide insights into genomic makeup of the oldest grapevine cultivar (Munage) in China. 
+            <i>Horticulture Research</i>, uhaf274.
+          </div>
+        </li>
+        <li>
+          <span class="yr">2025</span>
+          <div>
+            Xu N, Zhang S, Zhou X, Ma X, Ayiguzeli M, Zhong H, Zhang F, Zhang C, <strong>Yadav V</strong>, Wu X, Mei X. 
+            VvNAC33 functions as a key regulator of drought tolerance in grapevine by modulating reactive oxygen species production. 
+            <i>Plant Physiology and Biochemistry</i>:109971.
+          </div>
+        </li>
+        <li>
+          <span class="yr">2024</span>
+          <div>
+            Zhang C, Yang Y, Zhang S, <strong>Yadav V</strong>, Zhong H, Zhang F, Zhou X, Wu X, Cao X, Cui L. 
+            Mining candidate genes for grape seed traits based on a genome-wide association study. 
+            <i>Horticultural Plant Journal</i>.
+          </div>
+        </li>
+        <li>
+          <span class="yr">2022</span>
+          <div>
+            <strong>Yadav V</strong>, Sarker A, Yadav A, et al. 
+            Integrated biorefinery approach to valorize citrus waste: A sustainable solution for resource recovery and environmental management. 
+            <i>Chemosphere</i> 293:133459.
+          </div>
+        </li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- Editorial Roles -->
+  <section id="services">
+    <h2>Editorial &amp; Professional Service</h2>
+    <ul class="info-list">
+      <li>
+        <b>Editorial Role</b>
+        New Zealand Journal of Crop and Horticultural Science (Wiley)
+      </li>
+      <li>
+        <b>Editorial Role</b>
+        Journal of Crop Health
+      </li>
+      <li>
+        <b>Editorial Role</b>
+        Archives of Phytopathology and Plant Protection
+      </li>
+      <li>
+        <b>Editorial & Review Board</b>
+        International Journal of Vegetable Science
+      </li>
+      <li>
+        <b>Reviewer Board</b>
+        International Journal of Molecular Sciences (IJMS)
+      </li>
+      <li>
+        <b>Editorial Role</b>
+        Rodriguésia
+      </li>
+    </ul>
+  </section>
+
+  <!-- Honors & Awards -->
+  <section id="awards">
+    <h2>Honors &amp; Fellowships</h2>
+    <ul class="info-list">
+      <li>
+        <b>2023</b>
+        Peking University Molecular Breeding Academy (MBA-2023) Fellowship
+      </li>
+      <li>
+        <b>2019</b>
+        Hebrew University of Jerusalem Summer Fellowship (Israel)
+      </li>
+      <li>
+        <b>2018</b>
+        China Government Scholarship (CSC) – Bilateral Exchange Program
+      </li>
+      <li>
+        <b>2018</b>
+        ASRB-NET (National Eligibility Test), ICAR New Delhi
+      </li>
+      <li>
+        <b>2017</b>
+        DST-INSPIRE Fellowship (Govt. of India) &amp; University Gold Medal / First Rank
+      </li>
+      <li>
+        <b>2015</b>
+        First Rank / University Gold Medal in B.Sc. Horticulture
+      </li>
+    </ul>
+  </section>
+
+  <!-- Summary Facts -->
+  <section id="glance">
+    <h2>At a Glance</h2>
+    <div class="facts">
+      <div class="fact">
+        <b>Current Appointment</b>
+        Associate Researcher cum Post-Doc (2023–Present)
+      </div>
+      <div class="fact">
+        <b>Institution</b>
+        Xinjiang Academy of Agricultural Sciences, Urumqi, China
+      </div>
+      <div class="fact">
+        <b>Doctorate</b>
+        Ph.D. in Horticulture, Northwest A&amp;F University (2018–2022)
+      </div>
+      <div class="fact">
+        <b>Core Research</b>
+        Grapevine genomics, multi-omics, biotic stress, RNA-seq, bioinformatics
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Dr. Vivek Yadav &bull; Horticultural Genomics &amp; Bioinformatics &bull; Hosted on GitHub Pages
+  </div>
+</footer>
+
+</body>
+</html>
